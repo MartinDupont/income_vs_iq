@@ -34,5 +34,4 @@ could become less than 1, leading to an undefined mean income for some IQ bracke
 reporting very low incomes
 
 ## Conclusions
-The model is stable but due to the dataset it is very sensitive to the minimum income parameter, and the results cannot be trusted except to say 
-that there is __some__ increase in income with IQ.
+The algorithm is stable and can indeed fit the distribution. And, for any reasonable training parameters, it shows an increase in earnings with IQ. However, due to the dataset it is very sensitive to the minimum income parameter, and the results cannot be trusted except to say that there is __some__ increase in income with IQ.
