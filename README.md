@@ -18,9 +18,6 @@ I use the same data preprocessing approach as [this](http://www.jsmp.dk/posts/20
 He averages income over multiple years in order to obtain a clearer signal, and adjusts the income for inflation. He also adjusts for the age at which
 the AFQT test was taken, as teenagers have often not reached their final IQ yet. 
 
-## Results
-The algorithm works and can indeed fit the distribution. And, for any reasonable training parameters, it shows an increase in earnings with IQ. 
-
 ## Limitations
 
 The dataset is limited in that the measurement income from wages and business are capped at a certain value at any given year. The maximum value 
