@@ -44,4 +44,6 @@ def mean_of_pareto(m, b, x, y_0):
     Mean of a pareto distribution given that alpha = mx + b
     """
     alpha = (m * x + b)
-    return (alpha * y_0)/(alpha - 1)
+    if alpha < 1:
+        return float("inf")
+    return float(int((alpha * y_0)/(alpha - 1)))

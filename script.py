@@ -20,7 +20,7 @@ from likelihoods import mean_of_pareto, log_likelihood, d_db, d_dm
 
 # ============================== switchboard ================================ #
 
-MIN_INCOME = 25000 # Incomes must be truncated because pareto blows up at zero
+MIN_INCOME = 10000 # Incomes must be truncated because pareto blows up at zero
     
 epsilon = 0.00001 # training rate
 m_0 = - 1.0 /100 
@@ -100,11 +100,12 @@ def main(epsilon, m_0, b_0, n_epochs, min_income):
     iqs = normalized_iqs * 15 + 100
     expected_incomes = [mean_of_pareto(m, b, iq, min_income) for iq in normalized_iqs]
     
-    print("average expected income from model: {}".format(int(mean_of_pareto(1, 0, alpha, min_income))))
+    # Note that if α becomes less than one, the mean will be infinity.
+    print("average expected income from model: {}".format(mean_of_pareto(1, 0, alpha, min_income)))
     
     for iq, income, normed_iq in zip(iqs, expected_incomes, normalized_iqs):
         print("")
-        print("A person with an IQ of {} can expect an average income of {} per year".format(iq, int(income)))
+        print("A person with an IQ of {} can expect an average income of {} per year".format(iq, income))
         print("Effective α for a person with IQ {} is {}".format(iq, (m * normed_iq + b)))
         
     return(m, b)
