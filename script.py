@@ -11,6 +11,8 @@ of iq. I.e. let x = iq, then α = m * x + b.
 
 If we let y indicate income, we fit the model by maximizing the likelihood of 
 getting the data under the model, by varying b and m.
+
+For the mathematical derivation, look in the math_explainer folder.
 """
 
 import numpy as np
