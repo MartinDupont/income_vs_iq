@@ -78,8 +78,7 @@ def read_in_and_clean(path, min_income):
     
     for year in years:
         data["income" + year] = (data["business" + year] + data["wage" + year]) * inflation[year]
-    
-       
+
     data["age_at_test"] = 80 - data["birthyear"]
         
     # Apply age correction 
